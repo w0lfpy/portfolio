@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/cards/ProjectCard.astro';
+import ProjectResearchCard from '../components/cards/ProjectResearchCard.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import { object } from 'astro:schema';
+---
+
+<BaseLayout title="Projects - Quant Research">
+  <h1 class="font-serif text-4xl font-semibold text-slate-900">
+    Index of Projects
+  </h1>
+
+  <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
+    Categorized compilation of technical implementations, experiments, and projects infrastructure.
+  </p>
+
+  <section class="mt-10 grid gap-4">
+    <SectionLabel text="University Projects" class='mb-3'/>
+    <ProjectCard
+      title="Madrid Subway Network Optimization via Graph Theory"
+      objective="Represent the Madrid Metro system as a mathematical graph to study urban transit connectivity and compute optimal routes between stations through weighted shortest-path search."
+      implementation="Constructed a graph from structured station data, modelling each station as a vertex and each direct connection as a weighted edge. Edge weights were derived from Euclidean distance over station coordinates, while route optimization was performed using Dijkstra’s algorithm. The system was exposed through a Streamlit web interface with interactive route visualization."      
+      outcome="Produced an end-to-end route optimization tool that allows users to query stations, analyse neighbouring connections, compute shortest paths, estimate total route distance, and visualize the resulting journey over an interactive map."
+      stack={[
+        'Python',
+        'Streamlit',
+        'Pandas',
+        'Dijkstra Algorithm',
+        'Graph Theory',
+        'streamlit-folium',
+        'CSV Data Processing',
+      ]}
+      sourceUrl="https://github.com/w0lfpy/MadridSubway"
+    />
+    <ProjectCard
+      title="Real-Time Sign Language Recognition via Hand Landmark Analysis"
+      objective="Design a vision-based recognition system for sign-language alphabet gestures, transforming webcam hand-motion input into structured letter predictions and live text transcription."
+      implementation="Implemented a Python computer vision pipeline using OpenCV and MediaPipe Hands. The system extracts 21 hand landmarks per frame and evaluates the relative spatial configuration of the fingers to determine whether each finger is extended or folded. These geometric patterns are mapped to predefined alphabet gestures and rendered as recognized letters in real time."
+      outcome="Produced a functional real-time prototype for sign-language alphabet recognition, capable of detecting hand landmarks, classifying gesture states, displaying diagnostic information, and building a live transcription from the recognized letters. The architecture provides a foundation for future extensions into word-level recognition and sequence modelling."
+      stack={[
+        'Python',
+        'OpenCV',
+        'MediaPipe',
+        'NumPy',
+        'Pandas',
+        'Webcam Video Processing',
+        'Hand Landmark Geometry',
+        'Gesture-to-Letter Mapping',
+      ]}
+      sourceUrl="https://github.com/w0lfpy/SingLeng"
+    />
+    <ProjectCard
+      title="Commercy — Full-Stack Commerce Management System"
+      objective="Develop a full-stack management platform for small businesses, enabling administrators and users to create, organize, evaluate, and discover commercial websites through structured business data, reviews, ratings, and search filters."
+      implementation="Implemented a Node.js and Express REST API backed by MongoDB, with data models for users, businesses, and websites. The backend includes role-based authentication, commerce CRUD operations, website content management, image and text uploads, review and scoring functionality, city and interest-based filtering, Swagger documentation, and a testing workflow. A Next.js frontend was built as the client layer for consuming the API and interacting with the platform."
+      outcome="Produced an end-to-end web platform with a clear separation between API and frontend, persistent MongoDB storage, authenticated user flows, business and website management capabilities, documented REST endpoints, upload handling, and a foundation for extending the system into a production-oriented local commerce directory."
+      stack={[
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Mongoose',
+        'JWT',
+        'Next.js',
+        'Swagger',
+        'RESTful API',
+        'Role-Based Access Control',
+        'File Upload System',
+      ]}
+      sourceUrl="https://github.com/w0lfpy/Commercy"
+    />
+    <ProjectCard
+      title="Autonomous Multi-Agent Robotics Simulation in Webots"
+      objective="Design and implement a competitive multi-agent robotics environment that models pursuit-evasion behavior between a hunter robot and multiple runner robots, using autonomous control, sensor-based navigation, and real-time game-state supervision."
+      implementation="Built the system in Webots with Python-based controllers for the hunter, runner agents, and simulation supervisor. Each robot uses a differential-drive configuration with wheel encoders for odometry, GPS and compass fallback for pose estimation, infrared sensors for obstacle avoidance, and wireless channels for inter-agent communication. Robot behavior is governed by finite state machines covering search, chase, wander, avoidance, recovery, and capture-related states."
+      outcome="Produced a fully functional robotics simulation with autonomous pursuit-evasion dynamics, distance-based capture detection, real-time position broadcasting, timer and bonus management, obstacle avoidance, recovery from stuck states, and configurable parameters for gameplay balance and controller tuning."
+      stack={[
+        'Python',
+        'Webots',
+        'Webots Python API',
+        'Finite State Machines',
+        'Differential Odometry',
+        'Sensor Fusion',
+        'Infrared Obstacle Avoidance',
+        'Wireless Communication',
+        'Supervisor Controller',
+        'Multi-Agent Robotics',
+      ]}
+      sourceUrl="https://github.com/w0lfpy/robotics-final"
+    />
+  </section>
+
+  <section class="mt-10 grid gap-4">
+    <SectionLabel text="Research Projects" class='mb-3'/>
+    <!-- <ProjectResearchCard
+      title="Stochastic Volatility Calibration via Fractional Brownian Motion"
+      objective="Can incorporating fractional Brownian motion into rough volatility models improve the calibration accuracy for short-dated options compared to standard Markovian stochastic volatility models?"
+      implementation="Implemented a rough Bergomi model utilizing a hybrid scheme combining exact simulation of the variance process and Euler stepping. Calibration performed via a machine learning accelerated Levenberg–Marquardt algorithm."
+      outcome="Demonstrated a 40% reduction in out-of-sample pricing errors for options with expiries under one month. The Hurst parameter stabilized near 0.12 across major equity indices."
+      stack={[
+        'Julia',
+        'CUDA for Monte Carlo',
+        'TensorFlow for calibration',
+      ]}
+      sourceUrl="https://github.com/tu-usuario/tu-repo"
+      paperUrl="/papers/Embracing_Non_Linearity_ML_Driven_Stock_Selection_1741607154.pdf"
+    /> -->
+  </section>
+</BaseLayout>

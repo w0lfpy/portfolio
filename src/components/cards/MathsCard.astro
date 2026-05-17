@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  code: string;
+  topics: string[];
+  formula?: string;
+}
+const { title, code, topics, formula } = Astro.props;
+---
+
+<article class="flex flex-col h-full border border-divider bg-white p-5">
+  <header class="flex items-start justify-between gap-4 border-b border-divider pb-3">
+    <h3 class="font-sans text-lg font-bold leading-6 text-slate-900">
+      {title}
+    </h3>
+
+    <span class="shrink-0 text-xs font-bold uppercase tracking-wider text-slate-500">
+      {code}
+    </span>
+  </header>
+
+  <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700">
+    {
+      topics.map((topic) => (
+        <li>{topic}</li>
+      ))
+    }
+  </ul>
+
+  {
+    formula && (
+      <div class="mt-auto bg-[#E2E7F5] px-4 py-3 font-mono text-xs text-slate-700">
+        <span class="mr-3 font-serif italic text-slate-800">fx</span>
+        <span>{formula}</span>
+      </div>
+    )
+  }
+</article>

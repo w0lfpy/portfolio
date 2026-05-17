@@ -1,0 +1,36 @@
+---
+interface Props {
+  index: number;
+  title: string;
+  author: string[];
+  topic: string;
+}
+
+const {
+  index,
+  title,
+  author,
+  topic,
+} = Astro.props;
+---
+
+<li class="flex gap-2 text-sm leading-7 text-slate-700">
+  <span class="font-semibold text-navy">
+    [{index}]
+  </span>
+
+  <div>
+    <span class="text-base font-medium text-slate-800">
+      {title}
+    </span>
+
+    <span class="ml-1 text-sm text-slate-600">
+      ({author.join(', ')}).
+    </span>
+
+    <span class="ml-1 font-serif text-sm italic text-slate-700">
+      {topic}.
+    </span>
+
+  </div>
+</li>

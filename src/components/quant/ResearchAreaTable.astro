@@ -1,0 +1,51 @@
+---
+interface ResearchArea {
+  domain: string;
+  methodology: string;
+  dataset: string;
+}
+
+interface Props {
+  items: ResearchArea[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="mt-6 overflow-hidden border border-divider bg-white">
+  <table class="w-full border-collapse text-left">
+    <thead>
+      <tr class="border-b border-divider bg-[#F1F4FC]">
+        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+          Domain
+        </th>
+        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+          Primary Methodology
+        </th>
+        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+          Dataset Scope
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {
+        items.map((item) => (
+          <tr class="border-b border-divider last:border-b-0">
+            <td class="px-4 py-4 font-serif text-sm text-slate-900">
+              {item.domain}
+            </td>
+
+            <td class="px-4 py-4 text-sm text-slate-700">
+              {item.methodology}
+            </td>
+
+            <td class="px-4 py-4 text-sm text-slate-700">
+              {item.dataset}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

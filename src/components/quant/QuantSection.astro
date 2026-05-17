@@ -1,0 +1,53 @@
+---
+import FormulaBlock from './FormulaBlock.astro';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  bullets: string[];
+  formulaTitle?: string;
+  formula?: string;
+  formulaNote?: string;
+}
+
+const {
+  id,
+  title,
+  description,
+  bullets,
+  formulaTitle,
+  formula,
+  formulaNote,
+} = Astro.props;
+---
+
+<section id={id} class="scroll-mt-24 py-10">
+  <h2 class="font-sans text-2xl font-bold tracking-tight text-slate-900">
+    {title}
+  </h2>
+
+  <p class="mt-4 max-w-3xl font-serif text-base leading-8 text-slate-800">
+    {description}
+  </p>
+
+  {
+    formula && (
+      <div class="mt-6">
+        <FormulaBlock
+          title={formulaTitle}
+          formula={formula}
+          note={formulaNote}
+        />
+      </div>
+    )
+  }
+
+  <ul class="mt-6 list-disc space-y-3 pl-5 font-serif text-base leading-7 text-slate-900">
+    {
+      bullets.map((bullet) => (
+        <li>{bullet}</li>
+      ))
+    }
+  </ul>
+</section>

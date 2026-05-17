@@ -1,0 +1,42 @@
+---
+interface CourseworkItem {
+  module: string;
+  result: string;
+}
+
+interface Props {
+  title: string;
+  resultLabel: string;
+  items: CourseworkItem[];
+}
+
+const { title, resultLabel, items } = Astro.props;
+---
+
+<table class="w-full border-collapse text-left">
+  <thead>
+    <tr class="border-b-2 border-slate-900">
+      <th class="py-3 text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+        {title}
+      </th>
+      <th class="py-3 text-right text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+        {resultLabel}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {
+      items.map((item) => (
+        <tr class="border-b border-divider">
+          <td class="py-4 text-sm text-slate-900">
+            {item.module}
+          </td>
+          <td class="py-4 text-right text-sm font-semibold text-slate-900">
+            {item.result}
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

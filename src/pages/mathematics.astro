@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MathCard from '../components/cards/MathsCard.astro';
+import BookCard from '../components/cards/BookCard.astro';
+---
+
+<BaseLayout title="Mathematics - Quant Research">
+  <h1 class="font-serif text-4xl font-semibold text-slate-900">
+    Mathematical Foundations
+  </h1>
+
+  <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
+    A structured record of the mathematical foundations I have studied and continue to develop for quantitative finance, machine learning, and computing.
+  </p>
+
+  <section class="mt-10 grid gap-5 md:grid-cols-2">
+    <MathCard
+      title="Linear Algebra"
+      code="MATH-101"
+      topics={[
+        "Vector Spaces & Subspaces",
+        "Eigenvalues & Eigenvectors",
+        "Singular Value Decomposition (SVD)",
+        "Principal Component Analysis (PCA)",
+      ]}
+      formula="A = U Σ V^T"
+    />
+
+    <MathCard
+      title="Calculus & Real Analysis"
+      code="MATH-201"
+      topics={[
+        "Limits and Continuity",
+        "Multivariate Calculus",
+        "Taylor Series Expansion",
+        "Measure Theory Basics",
+        "Sequences and Series",
+        "Metric Spaces",
+      ]}
+      formula="f(x) = Σ f⁽ⁿ⁾(a)(x-a)ⁿ / n!"
+    />
+
+    <MathCard
+      title="Probability Theory"
+      code="STAT-301"
+      topics={[
+        "Axiomatic Probability",
+        "Random Variables & Distributions",
+        "Law of Large Numbers",
+        "Central Limit Theorem",
+      ]}
+      formula="P(A|B) = P(A ∩ B) / P(B)"
+    />
+
+    <MathCard
+      title="Statistics"
+      code="STAT-302"
+      topics={[
+        "Hypothesis Testing",
+        "Maximum Likelihood Estimation",
+        "Linear Regression Models",
+        "Time Series Analysis (ARIMA, GARCH)",
+        "Bayesian Inference",
+      ]}
+      formula="E[Rᵢ] - Rf = βᵢ(E[Rm] - Rf)"
+    />
+  </section>
+
+  <section class="mt-10">
+    <h2 class="border-b border-divider pb-3 text-m font-semibold text-slate-900">
+      Books
+    </h2>
+
+    <div id="books" class="mt-6 grid gap-4 md:grid-cols-2">
+      <BookCard
+        index={1}
+        title="Differential Calculus"
+        author={["Ron Larson", "Bruce Edwards"]}
+        topic="Calculus & Real Analysis"
+      />
+
+      <BookCard
+        index={2}
+        title="Integral Calculus"
+        author={["Ron Larson", "Bruce Edwards"]}
+        topic="Calculus & Real Analysis"
+      />
+
+      <BookCard
+        index={3}
+        title="A First Course in Probability"
+        author={["Sheldon Ross"]}
+        topic="Base Probability Theory"
+      />
+
+      <BookCard
+        index={4}
+        title="Probability Theory: The Logic of Science"
+        author={["E. T. Jaynes"]}
+        topic="Base Probability Theory"
+      />
+
+      <BookCard
+        index={5}
+        title="Probability and Measure"
+        author={["Patrick Billingsley"]}
+        topic="Rigorous Probability Theory"
+      />
+
+      <BookCard
+        index={6}
+        title="Foundations of Modern Probability"
+        author={["Olav Kallenberg"]}
+        topic="Rigorous Probability Theory"
+      />
+
+      <BookCard
+        index={7}
+        title="Probabilities and Potential"
+        author={["Dellacherie", "Meyer"]}
+        topic="Rigorous Probability Theory"
+      />
+
+      <BookCard
+        index={8}
+        title="Statistical Inference"
+        author={["George Casella", "Roger L. Berger"]}
+        topic="Statistics & Inference"
+      />
+
+      <BookCard
+        index={9}
+        title="Bayesian Data Analysis"
+        author={["Andrew Gelman", "John B. Carlin", "Hal S. Stern", "David B. Dunson", "Aki Vehtari", "Donald B. Rubin"]}
+        topic="Statistics & Inference"
+      />
+
+      <BookCard
+        index={10}
+        title="The Elements of Statistical Learning"
+        author={["Trevor Hastie", "Robert Tibshirani", "Jerome Friedman"]}
+        topic="Statistics & Inference"
+      />
+
+      <BookCard
+        index={11}
+        title="Convex Optimization"
+        author={["Stephen Boyd", "Lieven Vandenberghe"]}
+        topic="Optimization"
+      />
+
+      <BookCard
+        index={12}
+        title="Convex Optimization Theory — Dimitri Bertsekas"
+        author={["Dimitri Bertsekas"]}
+        topic="Optimization"
+      />
+
+      <BookCard
+        index={13}
+        title="Numerical Optimization"
+        author={["Jorge Nocedal", "Stephen J. Wright"]}
+        topic="Optimization & Numerical Methods"
+      />
+
+      <BookCard
+        index={14}
+        title="Operations Research and Management: Quantitative Methods for Planning and Decision-Making in Business and Economics"
+        author={["Franz W. Peren", "Thomas Neifer"]}
+        topic="Optimization & Numerical Methods"
+      />
+
+      <BookCard
+        index={15}
+        title="Stochastic Differential Equations: An Introduction with Applications"
+        author={["Bernt Øksendal"]}
+        topic="Stochastic Processes & Stochastic Calculus"
+      />
+
+      <BookCard
+        index={16}
+        title="Continuous Martingales and Brownian Motion"
+        author={["Daniel Revuz", "Marc Yor"]}
+        topic="Stochastic Processes & Stochastic Calculus"
+      />
+
+      <BookCard
+        index={17}
+        title="Stochastic Calculus for Finance I: The Binomial Asset Pricing Model"
+        author={["Steven Shreve"]}
+        topic="Financial Mathematics"
+      />
+
+      <BookCard
+        index={18}
+        title="Stochastic Calculus for Finance II: Continuous-Time Models"
+        author={["Steven Shreve"]}
+        topic="Financial Mathematics"
+      />
+
+      <BookCard
+        index={19}
+        title="Finding Alphas: A Quantitative Approach to Building Trading Strategies"
+        author={["Igor Tulchinsky"]}
+        topic="Quantitative Finance and Financial Applications"
+      />
+
+      <BookCard
+        index={20}
+        title="Theory of Games and Economic Behavior"
+        author={["John von Neumann", "Oskar Morgenstern"]}
+        topic="Game Theory & Economics"
+      />
+    </div>
+  </section>
+</BaseLayout>

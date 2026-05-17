@@ -1,0 +1,29 @@
+---
+interface Props {
+  degree: string;
+  institution: string;
+  gpa: string;
+  period: string;
+}
+
+const { degree, institution, gpa, period } = Astro.props;
+---
+
+<article class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+  <div>
+    <h3 class="font-sans text-2xl font-bold text-slate-900">
+      {degree}
+    </h3>
+    <p class="text-sm font-semibold text-slate-700">
+      GPA: {gpa}
+    </p>
+
+    <p class="mt-1 font-serif text-base italic text-slate-900">
+      {institution}
+    </p>
+  </div>
+
+  <span class="text-sm text-slate-700">
+    {period}
+  </span>
+</article>

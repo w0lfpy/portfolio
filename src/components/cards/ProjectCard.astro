@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+  objective: string;
+  implementation: string;
+  outcome: string;
+  stack: string[];
+  sourceUrl?: string;
+  sourceLabel?: string;
+}
+
+const {
+  title,
+  objective,
+  implementation,
+  outcome,
+  stack,
+  sourceUrl,
+  sourceLabel = 'Source',
+} = Astro.props;
+---
+
+<article class="border border-divider bg-white px-6 py-6">
+  <header class="flex items-start justify-between gap-6 border-b border-divider pb-4">
+    <h3 class="font-sans text-xl font-bold tracking-wide text-slate-900">
+      {title}
+    </h3>
+
+    {
+      sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          class="shrink-0 text-sm font-medium tracking-wide text-navy hover:underline"
+        >
+          &lt;&gt; {sourceLabel}
+        </a>
+      )
+    }
+  </header>
+
+  <div class="mt-4 grid gap-8 lg:grid-cols-[1fr_315px]">
+    <div class="space-y-6">
+      <section>
+        <h4 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-600">
+          Objective
+        </h4>
+
+        <p class="mt-1 font-serif text-lg leading-8 text-slate-900">
+          {objective}
+        </p>
+      </section>
+
+      <section>
+        <h4 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-600">
+          Implementation
+        </h4>
+
+        <p class="mt-1 font-serif text-lg leading-8 text-slate-900">
+          {implementation}
+        </p>
+      </section>
+
+      <section>
+        <h4 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-600">
+          Outcome
+        </h4>
+
+        <p class="mt-1 font-serif text-lg leading-8 text-slate-900">
+          {outcome}
+        </p>
+      </section>
+    </div>
+
+    <aside class="bg-[#E2E7F5] px-6 py-5">
+      <h4 class="border-b border-slate-300 pb-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-700">
+        Technical Stack
+      </h4>
+
+      <ul class="mt-4 space-y-3 text-base text-slate-800">
+        {
+          stack.map((item) => (
+            <li>{item}</li>
+          ))
+        }
+      </ul>
+    </aside>
+  </div>
+</article>

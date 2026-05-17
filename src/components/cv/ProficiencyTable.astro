@@ -1,0 +1,42 @@
+---
+interface ProficiencyItem {
+  category: string;
+  technologies: string;
+}
+
+interface Props {
+  items: ProficiencyItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="mt-6 overflow-hidden border-b-2 border-slate-900">
+  <table class="w-full border-collapse text-left">
+    <thead>
+      <tr class="border-b-2 border-slate-900">
+        <th class="py-4 pr-6 text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+          Category
+        </th>
+        <th class="py-4 text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+          Technologies
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {
+        items.map((item) => (
+          <tr class="border-b border-divider">
+            <td class="w-[260px] py-4 pr-6 font-serif text-base font-semibold text-slate-900">
+              {item.category}
+            </td>
+            <td class="py-4 text-base text-slate-800">
+              {item.technologies}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

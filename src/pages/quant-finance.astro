@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Divider from '../components/ui/Divider.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+
+import QuantSection from '../components/quant/QuantSection.astro';
+import ResearchAreaTable from '../components/quant/ResearchAreaTable.astro';
+
+const sections = [
+  {
+    id: 'financial-markets',
+    label: 'Financial Markets',
+  },
+  {
+    id: 'asset-pricing',
+    label: 'Asset Pricing',
+  },
+  {
+    id: 'portfolio-theory',
+    label: 'Portfolio Theory',
+  },
+  {
+    id: 'risk-management',
+    label: 'Risk Management',
+  },
+  {
+    id: 'derivatives',
+    label: 'Derivatives',
+  },
+  {
+    id: 'backtesting',
+    label: 'Backtesting & Strategy',
+  },
+  {
+    id: 'market-microstructure',
+    label: 'Market Microstructure',
+  },
+  {
+    id: 'reading-programme',
+    label: 'Reading Programme',
+  },
+];
+
+const researchAreas = [
+  {
+    domain: 'Asset Pricing',
+    methodology: 'Factor Models, CAPM, Fama-French, Cross-Sectional Regression',
+    dataset: 'Equities / ETFs',
+  },
+  {
+    domain: 'Volatility Modelling',
+    methodology: 'GARCH, Stochastic Volatility, Realized Volatility',
+    dataset: 'Daily / Intraday',
+  },
+  {
+    domain: 'Portfolio Analytics',
+    methodology: 'Mean-Variance, Risk Parity, Black-Litterman',
+    dataset: 'Multi-Asset Portfolios',
+  },
+  {
+    domain: 'Machine Learning in Finance',
+    methodology: 'Tree Models, Neural Networks, Feature Engineering',
+    dataset: 'Panel Data / Alternative Data',
+  },
+];
+
+const readingProgramme = [
+  {
+    area: 'Financial Markets & Instruments',
+    books: [
+      'Options, Futures, and Other Derivatives — John C. Hull',
+      'Investment Science — David G. Luenberger',
+    ],
+  },
+  {
+    area: 'Asset Pricing & Portfolio Theory',
+    books: [
+      'Asset Pricing — John H. Cochrane',
+      'Active Portfolio Management — Grinold & Kahn',
+      'Portfolio Selection — Harry Markowitz',
+    ],
+  },
+  {
+    area: 'Stochastic Calculus & Derivatives',
+    books: [
+      'Stochastic Calculus for Finance I & II — Steven Shreve',
+      'Arbitrage Theory in Continuous Time — Tomas Björk',
+    ],
+  },
+  {
+    area: 'Quantitative Trading & Research',
+    books: [
+      'Advances in Financial Machine Learning — Marcos López de Prado',
+      'Algorithmic Trading — Ernest P. Chan',
+      'Machine Learning for Asset Managers — Marcos López de Prado',
+    ],
+  },
+];
+---
+
+<BaseLayout title="Quant Finance - Quant Research">
+  <div class="grid gap-10 lg:grid-cols-[230px_1fr]">
+    <aside class="hidden border-r border-divider pr-8 lg:block">
+      <div class="sticky top-8">
+        <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-600">
+          Sections
+        </p>
+
+        <nav class="mt-5 flex flex-col gap-4">
+          {
+            sections.map((section) => (
+              <a
+                href={`#${section.id}`}
+                class="font-serif text-sm text-slate-800 hover:text-navy hover:underline"
+              >
+                {section.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </aside>
+
+    <main>
+      <section>
+        <SectionLabel text="Quantitative Finance" />
+
+        <h1 class="mt-6 font-sans text-3xl font-bold tracking-tight text-slate-900">
+          Quantitative Finance
+        </h1>
+
+        <p class="mt-4 max-w-3xl font-serif text-base leading-8 text-slate-800">
+          This section documents my progressive study of quantitative finance:
+          from financial markets and asset pricing to derivatives, portfolio
+          theory, risk modelling, backtesting and market microstructure. The
+          objective is to build a rigorous mathematical and computational
+          foundation for future work in quantitative research, quant development
+          and financial machine learning.
+        </p>
+      </section>
+
+      <Divider class="my-10" />
+
+      <QuantSection
+        id="financial-markets"
+        title="Financial Markets"
+        description="Study of how financial markets operate, how assets are traded, and how macroeconomic, institutional and behavioural forces influence prices, liquidity and volatility."
+        bullets={[
+          'Market structure across equities, fixed income, commodities, derivatives and digital assets.',
+          'Liquidity, spreads, order books, transaction costs and market efficiency.',
+          'Macroeconomic indicators, monetary policy, yield curves and cross-asset relationships.',
+          'Anomalies, behavioural deviations and empirical limits of market efficiency.',
+        ]}
+      />
+
+      <QuantSection
+        id="asset-pricing"
+        title="Asset Pricing"
+        description="Analysis of how financial assets are valued under uncertainty, with emphasis on expected returns, risk premia, factor exposures and stochastic discount factors."
+        formulaTitle="CAPM Representation"
+        formula="E[R_i] - R_f = β_i (E[R_m] - R_f)"
+        formulaNote="A first-order model relating expected excess return to systematic market exposure."
+        bullets={[
+          'Capital Asset Pricing Model and empirical limitations.',
+          'Fama-French factor models, momentum and cross-sectional return anomalies.',
+          'Stochastic discount factor interpretation of asset prices.',
+          'Linear factor models and regression-based empirical testing.',
+        ]}
+      />
+
+      <QuantSection
+        id="portfolio-theory"
+        title="Portfolio Theory"
+        description="Mathematical study of capital allocation under uncertainty, focusing on risk-return trade-offs, diversification, constraints and robust portfolio construction."
+        formulaTitle="Mean-Variance Optimization"
+        formula={`minimize:   wᵀΣw
+subject to: μᵀw ≥ R_target,   1ᵀw = 1`}
+        formulaNote="Classical Markowitz optimization where Σ is the covariance matrix and μ is the expected return vector."
+        bullets={[
+          'Markowitz mean-variance efficiency and the efficient frontier.',
+          'Risk parity, minimum variance and constrained allocation methods.',
+          'Black-Litterman model for incorporating subjective views.',
+          'Robust covariance estimation and shrinkage methods.',
+        ]}
+      />
+
+      <QuantSection
+        id="risk-management"
+        title="Risk Management"
+        description="Frameworks for measuring, modelling and controlling financial risk across portfolios, strategies and trading systems."
+        formulaTitle="Value at Risk"
+        formula="VaR_α(L) = inf { l ∈ R : P(L > l) ≤ 1 - α }"
+        formulaNote="A probabilistic threshold for portfolio losses at confidence level α."
+        bullets={[
+          'Value at Risk, Expected Shortfall and drawdown-based measures.',
+          'Stress testing, scenario analysis and tail-risk estimation.',
+          'Volatility targeting, leverage constraints and exposure limits.',
+          'Risk decomposition by asset, factor, sector and strategy component.',
+        ]}
+      />
+
+      <QuantSection
+        id="derivatives"
+        title="Derivatives"
+        description="Study of derivative instruments and pricing frameworks, with focus on options, futures, arbitrage-free valuation and stochastic processes."
+        formulaTitle="Black-Scholes PDE"
+        formula={`∂V/∂t + 1/2 σ²S² ∂²V/∂S² + rS ∂V/∂S - rV = 0`}
+        formulaNote="A foundational partial differential equation for European option pricing under idealized assumptions."
+        bullets={[
+          'Forwards, futures, swaps, vanilla options and option Greeks.',
+          'No-arbitrage pricing, replication arguments and risk-neutral valuation.',
+          'Binomial trees, Black-Scholes, Monte Carlo and finite difference methods.',
+          'Volatility smiles, implied volatility and model calibration.',
+        ]}
+      />
+
+      <QuantSection
+        id="backtesting"
+        title="Backtesting & Strategy"
+        description="Design and evaluation of systematic trading strategies using historical data, realistic assumptions and robust performance analysis."
+        bullets={[
+          'Signal generation, position sizing, transaction costs and portfolio accounting.',
+          'Walk-forward testing, train/test splits and out-of-sample validation.',
+          'Performance metrics including Sharpe ratio, Sortino ratio, max drawdown and turnover.',
+          'Common pitfalls: look-ahead bias, survivorship bias, overfitting and data snooping.',
+        ]}
+      />
+
+      <QuantSection
+        id="market-microstructure"
+        title="Market Microstructure"
+        description="Study of how trading mechanisms, order books, liquidity providers and market participants shape price formation at high frequency."
+        bullets={[
+          'Limit order books, bid-ask spreads, depth, imbalance and liquidity.',
+          'Price impact, adverse selection and execution costs.',
+          'High-frequency trading, latency, market fragmentation and venue selection.',
+          'Empirical analysis of tick-level and intraday financial data.',
+        ]}
+      />
+
+      <section id="reading-programme" class="scroll-mt-24 py-10">
+        <h2 class="font-sans text-2xl font-bold tracking-tight text-slate-900">
+          Reading Programme
+        </h2>
+
+        <p class="mt-4 max-w-3xl font-serif text-base leading-8 text-slate-800">
+          The following reading programme structures the books and references I
+          am studying or plan to study in order to strengthen my foundations in
+          mathematical finance, quantitative research and financial machine
+          learning.
+        </p>
+
+        <p class="mt-4 max-w-3xl font-serif text-base leading-8 text-slate-800">
+          A more complete reading list is available in the Mathematics page under the
+          <a
+            href="/mathematics#books"
+            class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-blue-academic underline decoration-blue-academic/40 underline-offset-4 transition-colors hover:text-navy hover:decoration-navy"
+          >
+            Books Section
+          </a>.
+        </p>
+
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          {
+            readingProgramme.map((group) => (
+              <article class="border border-divider bg-white p-5">
+                <h3 class="font-sans text-lg font-bold text-slate-900">
+                  {group.area}
+                </h3>
+
+                <ul class="mt-4 list-disc space-y-2 pl-5 font-serif text-sm leading-6 text-slate-800">
+                  {
+                    group.books.map((book) => (
+                      <li>{book}</li>
+                    ))
+                  }
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="py-10">
+        <h2 class="font-sans text-2xl font-bold tracking-tight text-slate-900">
+          Current Market Research Areas
+        </h2>
+
+        <p class="mt-4 max-w-3xl font-serif text-base leading-8 text-slate-800">
+          These areas represent the practical domains where I am connecting
+          theory, programming and empirical analysis through projects, papers and
+          research notes.
+        </p>
+
+        <ResearchAreaTable items={researchAreas} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>

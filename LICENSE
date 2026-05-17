@@ -1,0 +1,105 @@
+Portfolio Website License
+Copyright (c) 2026 Jose Suarez Ares
+All rights reserved.
+
+1. Scope
+
+This license applies to all original material contained in this repository,
+unless a specific file, directory, or asset states different license terms.
+
+Covered material includes, without limitation:
+
+- source code and configuration files;
+- page content, text, essays, notes, and documentation;
+- academic materials, including PDFs, preprints, working papers, and research drafts;
+- images, graphics, diagrams, visual assets, and design elements;
+- downloadable documents, CV files, and other authored materials;
+- any future original content added to this repository by the copyright holder,
+  unless explicitly relicensed or excluded.
+
+2. Ownership
+
+All covered material is protected by copyright and other applicable intellectual
+property laws. No license or other right is granted except as expressly stated
+in this document.
+
+3. Limited permission
+
+You may:
+
+- access and view this repository and website;
+- clone or fork the repository only to the extent technically permitted by the
+  platform hosting it;
+- make temporary local copies strictly for personal review, evaluation, or
+  reference.
+
+These limited permissions do not grant any right to exploit the material beyond
+personal inspection.
+
+4. Restrictions
+
+Except with prior written permission from the copyright holder, you may not:
+
+- copy, reproduce, republish, distribute, or publicly share covered material;
+- modify, adapt, translate, transform, or create derivative works;
+- use any covered material for commercial purposes;
+- reuse the visual design, branding, layout, written content, or research
+  materials in another website, paper, presentation, product, or repository;
+- upload, mirror, archive, resell, sublicense, or incorporate covered material
+  into datasets, training corpora, or automated content collections;
+- present covered academic material as your own or redistribute it in full or in part.
+
+5. Academic and research materials
+
+Any academic PDF, preprint, working paper, research note, appendix, slide deck,
+or similar research material published in this repository is provided for
+reading and reference only, unless expressly stated otherwise in that specific
+file or directory.
+
+No permission is granted to reproduce, redistribute, modify, translate,
+commercialize, or publish derivative versions of those materials without prior
+written permission.
+
+6. Source code and technical materials
+
+The source code in this repository is not open source unless a specific file or
+subdirectory includes a separate open source license.
+
+No permission is granted to use, copy, modify, distribute, sublicense, or
+deploy the covered code, except where a separate license expressly allows it.
+
+7. Third-party materials and external links
+
+This license applies only to material for which the copyright holder has rights
+and that is included directly in this repository.
+
+It does not override or replace:
+
+- licenses of third-party dependencies, packages, fonts, libraries, or tools;
+- licenses attached to third-party content referenced by the website;
+- license terms of external repositories, papers, datasets, or codebases merely
+  linked from this website or repository.
+
+If an external repository or linked codebase is intended to be licensed, that
+license must be published in the corresponding external project.
+
+8. No trademark or patent license
+
+No trademark, service mark, patent, or other proprietary right is granted by
+this license.
+
+9. No warranty
+
+All covered material is provided "as is", without warranty of any kind, express
+or implied, including without limitation warranties of accuracy, merchantability,
+fitness for a particular purpose, non-infringement, or availability.
+
+10. Permission requests
+
+Requests for reuse, quotation beyond applicable legal exceptions, collaboration,
+republication, or licensing inquiries should be directed to the repository owner.
+
+11. Separate notices control
+
+If a specific file, folder, document, or asset includes a different license or
+permission notice, that specific notice controls for that material only.

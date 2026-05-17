@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import CVSection from '../components/cv/CVSection.astro';
+import EducationItem from '../components/cv/EducationItem.astro';
+import ExperienceItem from '../components/cv/ExperienceItem.astro';
+import CertificationCard from '../components/cv/CertificationCard.astro';
+import ProficiencyTable from '../components/cv/ProficiencyTable.astro';
+import CourseworkTable from '../components/cv/CourseworkTable.astro';
+import CVDownloadMenu from '../components/cv/CVDownloadMenu.astro';
+
+const researchInterests = [
+  'Data-Driven Research Systems',
+  'Applied Machine Learning',
+  'Quantitative Finance',
+  'Mathematical Modelling',
+  'Scientific Computing',
+  'Data Engineering',
+];
+
+const education = [
+  {
+    degree: 'BSc Computing Science - Data Science & Big Data',
+    gpa: '- /4.0',
+    institution: 'Dublin Business School (DBS)',
+    period: '2023 — 2027',
+  },
+  {
+    degree: 'BSc Software Engineering',
+    gpa: '3.7/4.0',
+    institution: 'Immune Technology Institute',
+    period: '2023 — 2027',
+  },
+  {
+    degree: 'Certificate in Analysis and Professional Trading',
+    gpa: '3.88/4.0',
+    institution: 'Instituto BME',
+    period: '2020 — 2021',
+  },
+];
+
+const workExperience = [
+  {
+    title: 'Software Engineer & Data Engineering Intern',
+    company: 'Telefónica Tech',
+    location: 'Madrid',
+    period: 'June 2025 - December 2025',
+    bullets: [
+      'Designed and automated scalable data pipelines to consolidate heterogeneous infrastructure and security data into a unified analytical environment.',
+      'Implemented data modelling and transformation workflows to support structured analysis, reporting and operational decision-making.',
+      'Automated ingestion pipelines for security sources including SIEM, IDS/IPS and log systems, reducing processing times by approximately 30%.',
+      'Built dashboards and analytical views for monitoring risk KPIs, attack patterns and indicators of compromise, improving SOC visibility and response capabilities.',
+      'Developed integration tooling using Python, PHP, cloud-based services and data processing frameworks.',
+    ],
+  },
+];
+
+const certifications = [
+  {
+    name: 'Machine Learning Specialization',
+    issuer: 'Coursera / Stanford Online',
+    period: 'In Progress',
+    description:
+      'Supervised learning, neural networks, model evaluation and practical machine learning workflows.',
+  },
+  {
+    name: 'IT Specialist — Data Analytics',
+    issuer: 'Pearson',
+    period: 'Issued Feb. 2026 · Expires Feb. 2031',
+    description:
+      'Certification focused on data analytics fundamentals, data interpretation, analytical workflows and applied data-driven decision-making.',
+    certificateUrl: 'https://www.credly.com/badges/a2cfc055-bdc1-4045-8684-837d0e8fa529/linked_in_profile',
+  },
+  {
+    name: 'AWS Certified Solutions Architect — Associate',
+    issuer: 'Amazon Web Services (AWS)',
+    period: 'Issued Aug. 2024 · Expires Aug. 2027',
+    description:
+      'Validates the ability to design secure, resilient, high-performing and cost-optimized architectures on AWS cloud infrastructure.',
+    certificateUrl: 'https://www.credly.com/badges/a72f366a-50b6-42ee-923e-b841c2db9a8f/linked_in_profile',
+  },
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services (AWS)',
+    period: 'Issued Aug. 2024 · Expires Aug. 2027',
+    description:
+      'Foundational certification covering AWS cloud concepts, core services, security, architecture, pricing and operational best practices.',
+    certificateUrl: 'https://www.credly.com/badges/e8906af2-aede-4e46-8dba-09beb129105a/linked_in_profile',
+  },
+  {
+    name: 'Asesor Financiero Certificado - Analysis & Professional Trading (Instituto BME)',
+    issuer: 'CNMV — Comisión Nacional del Mercado de Valores',
+    period: 'Certified',
+    description:
+      'Certification associated with financial advisory knowledge, investment products, regulatory principles, client suitability and financial market fundamentals.',
+    certificateUrl: 'https://www.cnmv.es/portal/Titulos-Acreditados-Listado',
+  },
+];
+
+const technicalProficiency = [
+  {
+    category: 'Programming',
+    technologies: 'Python, TypeScript, JavaScript, PHP, Groovy, SQL, MongoDB, C++, Bash',
+  },
+  {
+    category: 'Machine Learning',
+    technologies: 'PyTorch, TensorFlow, Keras, Scikit-learn, Pandas, NumPy, SciPy',
+  },
+  {
+    category: 'Quantitative Tools',
+    technologies: 'Backtesting, Portfolio Optimization, Time-Series Analysis, Monte Carlo Simulation',
+  },
+  {
+    category: 'Infrastructure',
+    technologies: 'Linux, Docker, Git, AWS, Azure, Tailscale, REST APIs, Data Pipelines',
+  },
+];
+
+const graduateModules = [
+  {
+    module: 'Stochastic Calculus for Finance',
+    result: 'In Progress',
+  },
+  {
+    module: 'Machine Learning in Finance',
+    result: 'In Progress',
+  },
+];
+
+const undergraduateCoreModules = [
+  {
+    module: 'Data Structures',
+    result: 'First Class',
+  },
+  {
+    module: 'Algorithms',
+    result: 'First Class',
+  },
+  {
+    module: 'Object-Oriented Programming',
+    result: 'First Class',
+  },
+  {
+    module: 'Computer Architecture',
+    result: 'Top 5%',
+  },
+  {
+    module: 'Operating Systems',
+    result: 'Top 10%',
+  },
+];
+
+const undergraduateSpecializedModules = [
+  {
+    module: 'Data Science',
+    result: 'First Class',
+  },
+  {
+    module: 'Big Data',
+    result: 'First Class',
+  },
+  {
+    module: 'Artificial Intelligence I & II',
+    result: 'First Class',
+  },
+];
+---
+
+<BaseLayout title="CV - Quant Research">
+  <section class="pb-8">
+    <div class="flex flex-col gap-6 border-b-4 border-slate-900 pb-8 md:flex-row md:items-start md:justify-between">
+      <div>
+        <h1 class="font-sans text-4xl font-bold tracking-tight text-slate-900">
+          Curriculum Vitae
+        </h1>
+
+        <p class="mt-3 font-serif text-base italic text-slate-700">
+          Quantitative Developer / Software Engineering / Mathematical Finance & Machine Learning
+        </p>
+      </div>
+
+      <CVDownloadMenu
+        englishUrl="/cv/jose-suarez-ares-cv-en.pdf"
+        spanishUrl="/cv/jose-suarez-ares-cv-es.pdf"
+      />
+    </div>
+  </section>
+
+  <section class="grid gap-12 py-10 lg:grid-cols-[280px_1fr]">
+    <div>
+      <h2 class="border-b border-slate-500 pb-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+        Research Interests
+      </h2>
+
+      <ul class="mt-4 list-disc space-y-3 pl-5 font-serif text-base leading-7 text-slate-900">
+        {
+          researchInterests.map((interest) => (
+            <li>{interest}</li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="border-b border-slate-500 pb-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-900">
+        Personal Statement
+      </h2>
+
+      <p class="mt-4 max-w-4xl font-serif text-lg leading-9 text-slate-900">
+        Software engineer with a strong interest in data-intensive systems, mathematical modelling and machine learning. 
+        I am currently developing a deeper foundation in advanced postgraduate mathematics and quantitative finance, with the goal of applying rigorous analytical methods to financial markets and complex data environments. 
+        My background in data pipelines, cloud infrastructure and security analytics allows me to bridge practical engineering with research-oriented computation, building systems that are reliable, interpretable and technically robust.
+      </p>
+    </div>
+  </section>
+
+  <CVSection title="Work Experience">
+    <div class="relative mt-8 space-y-12 border-l border-slate-400 pl-8">
+      {
+        workExperience.map((item) => (
+          <ExperienceItem
+            title={item.title}
+            company={item.company}
+            location={item.location}
+            period={item.period}
+            bullets={item.bullets}
+          />
+        ))
+      }
+    </div>
+  </CVSection>
+
+  <CVSection title="Education">
+    <div class="mt-8 space-y-10">
+      {
+        education.map((item) => (
+          <EducationItem
+            degree={item.degree}
+            institution={item.institution}
+            period={item.period}
+            gpa={item.gpa}
+          />
+        ))
+      }
+    </div>
+  </CVSection>
+
+  <CVSection title="Certifications">
+    <div class="mt-6 grid gap-5 md:grid-cols-3">
+      {
+        certifications.map((cert) => (
+          <CertificationCard
+            name={cert.name}
+            issuer={cert.issuer}
+            period={cert.period}
+            description={cert.description}
+            certificateUrl={cert.certificateUrl}
+          />
+        ))
+      }
+    </div>
+  </CVSection>
+
+  <CVSection title="Technical Proficiency">
+    <ProficiencyTable items={technicalProficiency} />
+  </CVSection>
+
+  <CVSection title="Selected Coursework">
+    <div class="mt-8 grid gap-10 lg:grid-cols-2">
+      <!-- <CourseworkTable
+        title="Graduate Modules"
+        resultLabel="Standing"
+        items={graduateModules}
+      /> -->
+
+      <CourseworkTable
+        title="Undergraduate Core Modules"
+        resultLabel="Standing"
+        items={undergraduateCoreModules}
+      />
+
+      <CourseworkTable
+        title="Undergraduate Specialized Modules"
+        resultLabel="Standing"
+        items={undergraduateSpecializedModules}
+      />
+    </div>
+  </CVSection>
+
+  <section class="pt-8">
+    <div class="h-40 overflow-hidden border border-divider bg-[#E2E7F5]">
+      <div
+        class="h-full w-full bg-cover bg-center opacity-80"
+        style="background-image: url('/images/institutional-network-bg.svg');"
+      >
+      </div>
+    </div>
+  </section>
+</BaseLayout>

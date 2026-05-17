@@ -1,0 +1,48 @@
+---
+interface Props {
+  index: number;
+  title: string;
+  year: string;
+  venue?: string;
+  pdfUrl: string;
+  label?: string;
+}
+
+const {
+  index,
+  title,
+  year,
+  venue = 'Working Paper',
+  pdfUrl,
+  label = 'PDF Preprint',
+} = Astro.props;
+---
+
+<li class="flex gap-2 text-sm leading-7 text-slate-700">
+  <span class="font-semibold text-navy">
+    [{index}]
+  </span>
+
+  <div>
+    <span class="text-xl font-medium text-slate-800">
+      {title}
+    </span>
+
+    <span class="ml-1 text-sm text-slate-600">
+      ({year}).
+    </span>
+
+    <span class="ml-1 font-serif text-sm italic text-slate-700">
+      {venue}.
+    </span>
+
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noreferrer"
+      class="ml-2 font-semibold text-navy hover:underline"
+    >
+      [{label}]
+    </a>
+  </div>
+</li>

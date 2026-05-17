@@ -1,0 +1,35 @@
+<svg width="900" height="360" viewBox="0 0 900 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="360" fill="#E2E7F5"/>
+
+  <circle cx="120" cy="80" r="2.5" fill="#2F4A86" opacity="0.45"/>
+  <circle cx="210" cy="130" r="2" fill="#2F4A86" opacity="0.35"/>
+  <circle cx="320" cy="70" r="2.5" fill="#2F4A86" opacity="0.35"/>
+  <circle cx="420" cy="160" r="2" fill="#2F4A86" opacity="0.4"/>
+  <circle cx="560" cy="90" r="2.5" fill="#2F4A86" opacity="0.4"/>
+  <circle cx="690" cy="150" r="2" fill="#2F4A86" opacity="0.35"/>
+  <circle cx="790" cy="75" r="2.5" fill="#2F4A86" opacity="0.45"/>
+
+  <circle cx="150" cy="250" r="2" fill="#102A5C" opacity="0.3"/>
+  <circle cx="280" cy="220" r="2.5" fill="#102A5C" opacity="0.35"/>
+  <circle cx="390" cy="275" r="2" fill="#102A5C" opacity="0.3"/>
+  <circle cx="515" cy="230" r="2.5" fill="#102A5C" opacity="0.35"/>
+  <circle cx="650" cy="275" r="2" fill="#102A5C" opacity="0.3"/>
+  <circle cx="805" cy="235" r="2.5" fill="#102A5C" opacity="0.35"/>
+
+  <path d="M120 80L210 130L320 70L420 160L560 90L690 150L790 75" stroke="#2F4A86" stroke-opacity="0.18"/>
+  <path d="M150 250L280 220L390 275L515 230L650 275L805 235" stroke="#102A5C" stroke-opacity="0.16"/>
+  <path d="M210 130L280 220M420 160L515 230M560 90L650 275M690 150L805 235" stroke="#2F4A86" stroke-opacity="0.12"/>
+
+  <circle cx="450" cy="180" r="145" stroke="#FFFFFF" stroke-opacity="0.25"/>
+  <circle cx="450" cy="180" r="95" stroke="#FFFFFF" stroke-opacity="0.18"/>
+
+  <path d="M0 0H900V360H0V0Z" fill="url(#fade)"/>
+
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="900" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F8F5" stop-opacity="0.05"/>
+      <stop offset="0.48" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#102A5C" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+</svg>
