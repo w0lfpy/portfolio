@@ -24,6 +24,7 @@ const {
 
     <title>{title}</title>
 
+    <link rel="icon" type="image/png" href="/images/photoMe.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,10 +34,10 @@ const {
   </head>
 
   <body class="min-h-screen bg-paper font-sans text-ink antialiased">
-    <div class="mx-auto min-h-screen max-w-6xl px-6">
+    <div class="mx-auto min-h-screen max-w-6xl px-4 sm:px-6">
       <Header />
 
-      <main class="py-12">
+      <main class="py-10 sm:py-12">
         <slot />
       </main>
 

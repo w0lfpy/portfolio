@@ -99,7 +99,7 @@ const readingProgramme = [
 ---
 
 <BaseLayout title="Quant Finance - Quant Research">
-  <div class="grid gap-10 lg:grid-cols-[230px_1fr]">
+  <div class="grid min-w-0 gap-8 lg:grid-cols-[230px_1fr] lg:gap-10">
     <aside class="hidden border-r border-divider pr-8 lg:block">
       <div class="sticky top-8">
         <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-600">
@@ -121,7 +121,7 @@ const readingProgramme = [
       </div>
     </aside>
 
-    <main>
+    <main class="min-w-0 pr-2 sm:pr-0">
       <section>
         <SectionLabel text="Quantitative Finance" />
 
@@ -263,12 +263,12 @@ subject to: μᵀw ≥ R_target,   1ᵀw = 1`}
         <div class="mt-6 grid gap-5 md:grid-cols-2">
           {
             readingProgramme.map((group) => (
-              <article class="border border-divider bg-white p-5">
-                <h3 class="font-sans text-lg font-bold text-slate-900">
+              <article class="min-w-0 border border-divider bg-white p-4 sm:p-5">
+                <h3 class="break-words font-sans text-lg font-bold text-slate-900">
                   {group.area}
                 </h3>
 
-                <ul class="mt-4 list-disc space-y-2 pl-5 font-serif text-sm leading-6 text-slate-800">
+                <ul class="mt-4 list-disc space-y-2 pl-5 font-serif text-sm leading-6 break-words text-slate-800">
                   {
                     group.books.map((book) => (
                       <li>{book}</li>
