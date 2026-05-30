@@ -4,6 +4,8 @@ interface Props {
   title: string;
   author: string[];
   topic: string;
+  pdfUrl: string;
+  label?: string;
 }
 
 const {
@@ -11,6 +13,8 @@ const {
   title,
   author,
   topic,
+  pdfUrl,
+  label = 'PDF Preprint',
 } = Astro.props;
 ---
 
@@ -31,6 +35,15 @@ const {
     <span class="ml-1 font-serif text-sm italic text-slate-700">
       {topic}.
     </span>
+
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noreferrer"
+      class="ml-2 font-semibold text-navy hover:underline"
+    >
+      [{label}]
+    </a>
 
   </div>
 </li>
