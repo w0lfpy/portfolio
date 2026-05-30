@@ -12,17 +12,17 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="mt-6 overflow-hidden border border-divider bg-white">
-  <table class="w-full border-collapse text-left">
+<div class="mt-6 overflow-x-auto border border-divider bg-white">
+  <table class="min-w-[640px] w-full border-collapse text-left">
     <thead>
       <tr class="border-b border-divider bg-[#F1F4FC]">
-        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+        <th class="px-3 py-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-900 sm:px-4 sm:py-4">
           Domain
         </th>
-        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+        <th class="px-3 py-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-900 sm:px-4 sm:py-4">
           Primary Methodology
         </th>
-        <th class="px-4 py-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-900">
+        <th class="px-3 py-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-900 sm:px-4 sm:py-4">
           Dataset Scope
         </th>
       </tr>
@@ -32,15 +32,15 @@ const { items } = Astro.props;
       {
         items.map((item) => (
           <tr class="border-b border-divider last:border-b-0">
-            <td class="px-4 py-4 font-serif text-sm text-slate-900">
+            <td class="px-3 py-3 font-serif text-sm text-slate-900 sm:px-4 sm:py-4">
               {item.domain}
             </td>
 
-            <td class="px-4 py-4 text-sm text-slate-700">
+            <td class="px-3 py-3 text-sm text-slate-700 sm:px-4 sm:py-4">
               {item.methodology}
             </td>
 
-            <td class="px-4 py-4 text-sm text-slate-700">
+            <td class="px-3 py-3 text-sm text-slate-700 sm:px-4 sm:py-4">
               {item.dataset}
             </td>
           </tr>
