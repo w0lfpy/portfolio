@@ -10,8 +10,8 @@ import PublicationItem from '../components/article/PublicationItem.astro';
   </h1>
 
   <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
-    Working papers, research notes and technical investigations in mathematics, statistics, quantitative
-    finance, machine learning and computing.
+    Working papers from my academic background and projects.
+    Research notes and technical investigations in mathematics, statistics, machine learning and computing.
   </p>
 
   <section class="mt-10">
@@ -21,6 +21,16 @@ import PublicationItem from '../components/article/PublicationItem.astro';
 
     <div class="mt-6 grid gap-4 md:grid-cols-2">
       <ResearchCard
+        title="Machine Learning Algorithms"
+        description="Modeling machine learning algorithms to resolve day-to-day problems and optimize processes."
+      />
+
+      <ResearchCard
+        title="Stochastic Calculus & Derivatives Pricing"
+        description="Developing numerical methods and closed-form approximations for exotic options under complex jump-diffusion models."
+      />
+
+      <ResearchCard
         title="Time-Series Analysis & Volatility Modelling"
         description="Focusing on non-stationary properties, fractal integration, and rough volatility paradigms for robust forecasting."
       />
@@ -28,16 +38,6 @@ import PublicationItem from '../components/article/PublicationItem.astro';
       <ResearchCard
         title="Deep Learning in Financial Markets"
         description="Applying sequence models (LSTM, Transformers) to noisy, high-dimensional market data for signal extraction."
-      />
-
-      <ResearchCard
-        title="Market Microstructure & Order Flow"
-        description="Modeling limit order book dynamics, liquidity provision, and short-term price impact functions."
-      />
-
-      <ResearchCard
-        title="Stochastic Calculus & Derivatives Pricing"
-        description="Developing numerical methods and closed-form approximations for exotic options under complex jump-diffusion models."
       />
     </div>
   </section>
@@ -50,16 +50,16 @@ import PublicationItem from '../components/article/PublicationItem.astro';
     <div class="mt-6 grid gap-4">
       <PublicationItem
         index={1}
-        title="High-Frequency Microstructure Analysis in Fragmented Equity Markets"
-        year="2023"
+        title="Applied ML for Home Credit Default Risk - Kaggle Competition"
+        year="2026"
         venue="White Paper"
         pdfUrl="/papers/test.pdf"
         label="PDF Preprint"
       />
       <PublicationItem
         index={2}
-        title="High-Frequency Microstructure Analysis in Fragmented Equity Markets"
-        year="2023"
+        title="Supervised Classification Models for Predictive Maintenance and System Failure"
+        year="2026"
         venue="White Paper"
         pdfUrl="/papers/test.pdf"
         label="PDF Preprint"
@@ -67,7 +67,7 @@ import PublicationItem from '../components/article/PublicationItem.astro';
     </div>
   </section>
 
-  <section class="mt-10 grid gap-4">
+  <!-- <section class="mt-10 grid gap-4">
     <article class="border border-line bg-white p-6">
       <p class="text-[10px] font-semibold uppercase tracking-widest text-navy">
         Working Paper
@@ -82,5 +82,5 @@ import PublicationItem from '../components/article/PublicationItem.astro';
         market fragmentation across trading venues.
       </p>
     </article>
-  </section>
+  </section> -->
 </BaseLayout>

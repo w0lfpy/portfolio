@@ -16,6 +16,49 @@ import { object } from 'astro:schema';
   </p>
 
   <section class="mt-10 grid gap-4">
+    <SectionLabel text="Research Projects" class='mb-3'/>
+    <ProjectCard
+      title="Supervised Classification Models for Predictive Maintenance and System Failure"
+      objective="Use machine operating data from the AI4I 2020 Predictive Maintenance Dataset to predict machine failures, compare classification models, and account for the low frequency of failure events."
+      implementation="Explored and prepared 10,000 machine records, feature engineering and preventing data leakage by excluding identifiers and failure-mechanism indicators from the predictors. Trained and compared nine baseline and advanced classifiers using stratified five-fold cross-validation, then evaluated them on a held-out test set. Used SHAP to interpret the Gradient Boosting model."      
+      outcome="Produced an end-to-end classification and evaluation workflow with model comparisons, test-set metrics, classification reports, and feature explanations. On the test set, Gradient Boosting achieved the highest F1 score (0.8889), HistGradientBoosting achieved the highest Average Precision (0.9057), and Decision Tree achieved the highest recall (0.9118)."
+      stack={[
+        'Python',
+        'scikit-learn',
+        'Feature Engineering',
+        'Stratified 5-Fold Cross-Validation',
+        'Ensemble Learning (Random Forest & Gradient Boosting)',
+        'Multilayer Perceptron (Neural Network)',
+        'Class-Imbalance Evaluation (Precision, Recall & Average Precision)',
+        'SHAP Explainability',
+        'Game Theory',
+      ]}
+      sourceUrl="https://github.com/w0lfpy"
+    />
+
+    <ProjectCard
+      title="Applied ML for Home Credit Default Risk - Kaggle Competition"
+      objective="Predict whether a loan applicant will experience payment difficulties using Home Credit application data and historical credit and payment records, while accounting for the low frequency of positive cases.",
+      implementation="Explored and prepared the application data, engineered applicant-level features from historical tables, and built baseline and advanced classification workflows. Compared and tuned classifiers using validation data and stratified five-fold cross-validation, addressing class imbalance by undersampling the training set. Selected the final model using ROC-AUC, evaluated it on a held-out test set, analyzed decision thresholds, and used SHAP to interpret feature contributions.",
+      outcome="Produced an end-to-end workflow for data exploration, feature preparation, model comparison, and evaluation. The selected Gradient Boosting model achieved a validation ROC-AUC of 0.7783 and a held-out test ROC-AUC of 0.7818. At a 0.50 threshold, positive-class recall was 0.7143 and at a threshold near 0.41, recall increased to 0.8096.",
+      stack={[
+        "Python",
+        "pandas & NumPy",
+        "scikit-learn",
+        "Feature Engineering and Historical Data Aggregation",
+        "Stratified Train/Validation/Test Splits",
+        "Stratified 5-Fold Cross-Validation",
+        "Ensemble Learning (Gradient Boosting and Tree-Based Models)",
+        "Class-Imbalance Handling",
+        "ROC-AUC, PR-AUC, Precision, Recall & F1",
+        "Threshold Analysis & Optimization",
+        "SHAP Explainability",
+      ]},
+      sourceUrl="https://github.com/w0lfpy/Home-Credit-Default-Risk"
+    />
+  </section>
+
+  <section class="mt-10 grid gap-4">
     <SectionLabel text="University Projects" class='mb-3'/>
     <ProjectCard
       title="Madrid Subway Network Optimization via Graph Theory"
@@ -88,22 +131,5 @@ import { object } from 'astro:schema';
       ]}
       sourceUrl="https://github.com/w0lfpy/robotics-final"
     />
-  </section>
-
-  <section class="mt-10 grid gap-4">
-    <SectionLabel text="Research Projects" class='mb-3'/>
-    <!-- <ProjectResearchCard
-      title="Stochastic Volatility Calibration via Fractional Brownian Motion"
-      objective="Can incorporating fractional Brownian motion into rough volatility models improve the calibration accuracy for short-dated options compared to standard Markovian stochastic volatility models?"
-      implementation="Implemented a rough Bergomi model utilizing a hybrid scheme combining exact simulation of the variance process and Euler stepping. Calibration performed via a machine learning accelerated Levenberg–Marquardt algorithm."
-      outcome="Demonstrated a 40% reduction in out-of-sample pricing errors for options with expiries under one month. The Hurst parameter stabilized near 0.12 across major equity indices."
-      stack={[
-        'Julia',
-        'CUDA for Monte Carlo',
-        'TensorFlow for calibration',
-      ]}
-      sourceUrl="https://github.com/tu-usuario/tu-repo"
-      paperUrl="/papers/Embracing_Non_Linearity_ML_Driven_Stock_Selection_1741607154.pdf"
-    /> -->
   </section>
 </BaseLayout>
